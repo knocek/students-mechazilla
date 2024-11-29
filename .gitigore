@@ -1,0 +1,32 @@
+# Pliki i foldery generowane przez Visual Studio
+.vscode/
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.obj
+*.exe
+*.ilk
+*.pdb
+*.ipdb
+*.iobj
+*.log
+*.tlog
+*.lastbuildstate
+*.db
+*.idb
+*.suo
+*.opensdf
+*.sdf
+
+# Foldery wyjściowe (Debug/Release)
+x64/Debug/
+x64/Release/
+
+# Pliki SFML binarne
+SFML/bin/
+SFML/lib/*.dll
+
+# Systemowe
+.DS_Store
+Thumbs.db
+desktop.ini
