@@ -1,4 +1,5 @@
-# students-mechazilla
+
+ # students-mechazilla
 This is our first game in C++ with SFML. We are still learning!
 
 
@@ -22,29 +23,71 @@ Before you can run the project, ensure your system meets the following requireme
 
 1. **Clone the repository**:
    Open your terminal and run:
-   ```bash
+   ~~~bash  
    git clone https://github.com/knocek/students-mechazilla.git
+   ~~~
+
+2. **Open the Project in Visual Studio**
+   Open the MechazillaGame.sln file in Visual Studio.
+   Select the correct build configuration:
+   Configuration: Debug or Release.
+   Platform: x64.
+
+3. **Set Up SFML**
+   1. Navigate to the folder where you installed SFML.
+   2. Copy the required .dll files from SFML/bin to the x64/Debug (or x64/Release) folder in your project directory:
+
+  Debug:
+  ~~~bash  
+  sfml-graphics-d.dll
+  sfml-window-d.dll
+  sfml-system-d.dll
+  sfml-audio-d.dll
+  sfml-network-d.dll 
+  ~~~~
+
+  Release (no -d suffix):
+  ~~~bash
+  sfml-graphics.dll
+  sfml-window.dll
+  sfml-system.dll
+  sfml-audio.dll
+  sfml-network.dll
+  ~~~
+
+   3. Ensure the following SFML folders are properly configured in Visual Studio:
+
+   Include Path: Add SFML/include to the project's include directories.
+   Library Path: Add SFML/lib to the project's library directories.
+   Dependencies: Link the following libraries in Visual Studio:
+   ~~~bash
+   sfml-graphics-d.lib
+   sfml-window-d.lib
+   sfml-system-d.lib
+   sfml-audio-d.lib
+   sfml-network-d.lib
+   ~~~
+
+## 🔧 Building and Running the Game
+In Visual Studio, click Build → Build Solution or press Ctrl+Shift+B.
+After the build completes, find the executable file in:
+
+- x64/Debug/MechazillaGame.exe
+- x64/Release/MechazillaGame.exe
+
+Run the .exe file to start the game!
 
 
+## 🔧 Troubleshooting
+Problem: Missing .dll files
+Ensure you copied the .dll files from SFML/bin to the appropriate output folder (x64/Debug or x64/Release).
 
-# MechazillaGame
-MechazillaGame to gra stworzona w języku C++ z wykorzystaniem biblioteki [SFML](https://www.sfml-dev.org/). Projekt umożliwia łatwe uruchomienie na każdym komputerze z odpowiednio skonfigurowanym środowiskiem.
+Problem: Executable file not generated
+Verify that the correct configuration (x64/Debug or x64/Release) is selected.
+Ensure all SFML paths (include and lib) are properly set up in the project settings.
 
----
 
-## 🚀 Wymagania wstępne
-
-Aby uruchomić projekt, upewnij się, że Twój komputer spełnia następujące wymagania:
-
-1. **System operacyjny**: Windows, macOS lub Linux.
-2. **Kompatybilne IDE**: Visual Studio 2022 (lub nowsze) z zainstalowanymi zestawami narzędzi dla C++.
-3. **Biblioteka SFML**: Pobierz [SFML 2.5.1](https://www.sfml-dev.org/download.php) (wersja dla Visual Studio).
-
----
-
-## 🛠️ Konfiguracja projektu w Visual Studio
-
-1. **Sklonuj repozytorium**:
-   W terminalu uruchom polecenie:
-   ```bash
-   git clone https://github.com/knocek/students-mechazilla.git
+## 💡 Useful Links
+- [SFML Official Documentation](https://www.sfml-dev.org/documentation/2.6.2/)
+- [Download SFML](https://www.sfml-dev.org/download.php)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/pl/downloads/)
