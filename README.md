@@ -15,7 +15,7 @@ Before you can run the project, ensure your system meets the following requireme
 
 1. **Operating System**: Windows, macOS, or Linux.
 2. **Compatible IDE**: Visual Studio 2022 (or newer) with C++ development tools installed.
-3. **SFML Library**: Download [SFML 2.4.0](https://www.sfml-dev.org/download.php) (version for Visual Studio).
+3. **SFML Library**: Download [SFML 2.4.0](https://www.sfml-dev.org/download/sfml/2.4.0/) (version for Visual Studio).
 
 ---
 
