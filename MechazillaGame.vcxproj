@@ -71,11 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)SFML/lib;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)SFML/lib;$(IncludePath); ${ProjectDir}include</IncludePath>
     <OutDir>$(SolutionDir)x64\Debug\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)SFML/lib;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)SFML/lib;$(IncludePath); ${ProjectDir}include</IncludePath>
     <OutDir>$(SolutionDir)x64\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -144,6 +144,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Menu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,8 +14,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Menu.cpp">
       <Filter>src</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Menu.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

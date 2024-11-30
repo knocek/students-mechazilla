@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\MechazillaGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{07302268-5313-46E8-9FA3-00C55A2EF5ED}|MechazillaGame.vcxproj|C:\\MechazillaGame\\src\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{07302268-5313-46E8-9FA3-00C55A2EF5ED}|MechazillaGame.vcxproj|solutionrelative:src\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07302268-5313-46E8-9FA3-00C55A2EF5ED}|MechazillaGame.vcxproj|C:\\MechazillaGame\\include\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{07302268-5313-46E8-9FA3-00C55A2EF5ED}|MechazillaGame.vcxproj|solutionrelative:include\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{07302268-5313-46E8-9FA3-00C55A2EF5ED}|MechazillaGame.vcxproj|C:\\MechazillaGame\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{07302268-5313-46E8-9FA3-00C55A2EF5ED}|MechazillaGame.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -19,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "C:\\MechazillaGame\\src\\Menu.cpp",
+              "RelativeDocumentMoniker": "src\\Menu.cpp",
+              "ToolTip": "C:\\MechazillaGame\\src\\Menu.cpp",
+              "RelativeToolTip": "src\\Menu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-29T19:35:00.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\MechazillaGame\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "C:\\MechazillaGame\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-29T15:10:48.649Z",
+              "WhenOpened": "2024-11-29T19:32:50.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu.h",
+              "DocumentMoniker": "C:\\MechazillaGame\\include\\Menu.h",
+              "RelativeDocumentMoniker": "include\\Menu.h",
+              "ToolTip": "C:\\MechazillaGame\\include\\Menu.h",
+              "RelativeToolTip": "include\\Menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-29T19:34:11.869Z",
               "EditorCaption": ""
             }
           ]
