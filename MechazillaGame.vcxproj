@@ -146,11 +146,13 @@
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\OptionsMenu.cpp" />
     <ClCompile Include="src\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Menu.h" />
+    <ClInclude Include="include\OptionsMenu.h" />
     <ClInclude Include="include\SoundManager.h" />
   </ItemGroup>
   <ItemGroup>

@@ -3,36 +3,48 @@
 #include "../include/Menu.h"
 #include "../include/Game.h"
 #include "../include/SoundManager.h"
+#include "../include/OptionsMenu.h"
 #include <iostream>
 
 int main() {
-
+    // Create the main application window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Mechazilla Game Menu");
-    SoundManager soundManager;
 
+    // Initialize the sound manager
+    SoundManager soundManager;
     soundManager.playMusic();
 
+    // Initialize the main menu
     Menu menu(window, soundManager);
 
     while (window.isOpen()) {
-        // Obs³uga wejœcia u¿ytkownika
+        // Handle user input in the main menu
         if (menu.handleInput()) {
             int selected = menu.getSelectedOption();
-            if (selected == 0) { // Jeœli wybrano "Play"
+
+            if (selected == 0) { // "Play" selected
                 std::cout << "Play selected!" << std::endl;
-                Game game(window);   // Utwórz instancjê gry
-                game.run();          // Uruchom grê
-            } else if (selected == 1) { // Jeœli wybrano "Options"
+
+                // Create and run the game instance
+                Game game(window);
+                game.run();
+
+            }
+            else if (selected == 1) { // "Options" selected
                 std::cout << "Options selected!" << std::endl;
-                menu.drawOptions();
-                // Tutaj otwórz ekran opcji (do implementacji)
-            } else if (selected == 2) { // Jeœli wybrano "Quit"
+
+                // Create and handle the options menu
+                OptionsMenu optionsMenu(window, soundManager);
+                optionsMenu.handleInput();
+
+            }
+            else if (selected == 2) { // "Quit" selected
                 std::cout << "Quit selected!" << std::endl;
                 window.close();
             }
         }
 
-        // Rysowanie menu
+        // Draw the main menu
         menu.draw();
     }
 
