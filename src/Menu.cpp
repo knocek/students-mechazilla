@@ -10,6 +10,16 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
         exit(1);
     }
 
+    //background
+
+    if (!textureMenu.loadFromFile("assets/images/main-background.jpg")) {
+        std::cerr << "Error loading background image!" << std::endl;
+        exit(1);
+    }
+
+    spriteBG.setTexture(textureMenu);
+    spriteBG.setPosition(0, 0);
+
     // Main menu options
     std::vector<std::string> options = { "Play", "Options", "Quit" };
 
@@ -18,8 +28,15 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
         text.setFont(font);
         text.setString(options[i]);
         text.setCharacterSize(40);
-        text.setPosition(300, 200 + i * 60);
-        text.setFillColor(i == selectedOption ? sf::Color::Red : sf::Color::White);
+
+        sf::FloatRect textBounds = text.getLocalBounds();
+
+        // Wyśrodkuj tekst
+        float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
+        float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
+
+        text.setPosition(textX, textY);
+        text.setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
         menuOptions.push_back(text);
     }
 }
@@ -27,6 +44,7 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
 // Draw main menu
 void Menu::draw() {
     window.clear();
+    window.draw(spriteBG);
     for (const auto& option : menuOptions) {
         window.draw(option);
     }

@@ -10,9 +10,16 @@ class Menu {
 private:
     sf::RenderWindow& window;
     SoundManager& soundManager;
-    sf::Font font;
+   
     std::vector<sf::Text> menuOptions;
     int selectedOption; // Indeks wybranej opcji
+
+    //font
+    sf::Font font;
+
+    //background
+    sf::Texture textureMenu; // Tekstura t³a
+    sf::Sprite spriteBG;
 
 public:
     Menu(sf::RenderWindow& window, SoundManager& soundManager);

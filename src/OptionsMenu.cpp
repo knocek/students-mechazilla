@@ -21,8 +21,15 @@ void OptionsMenu::setupMenu() {
         text.setFont(font);
         text.setString(options[i]);
         text.setCharacterSize(40);
-        text.setPosition(300, 200 + i * 60);
-        text.setFillColor(i == 0 ? sf::Color::Red : sf::Color::White);
+
+        sf::FloatRect textBounds = text.getLocalBounds();
+
+        // Wyœrodkuj tekst
+        float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
+        float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
+
+        text.setPosition(textX, textY);
+        text.setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
         menuOptions.push_back(text);
     }
 }
@@ -68,7 +75,7 @@ void OptionsMenu::handleInput() {
 
                 // Update option colors
                 for (size_t i = 0; i < menuOptions.size(); ++i) {
-                    menuOptions[i].setFillColor(i == selectedOption ? sf::Color::Red : sf::Color::White);
+                    menuOptions[i].setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
                 }
             }
         }
