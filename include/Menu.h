@@ -16,7 +16,7 @@ private:
 public:
     Menu(sf::RenderWindow& window);         // Konstruktor
     void draw();                            // Rysuje menu na ekranie
-    void handleInput();                     // Obs³uguje wejœcie u¿ytkownika
+    bool handleInput();                     // Obs³uguje wejœcie u¿ytkownika
     int getSelectedOption() const;          // Zwraca aktualnie wybran¹ opcjê
 };
 

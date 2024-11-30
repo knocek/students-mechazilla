@@ -1,18 +1,15 @@
 ﻿#include "../include/Menu.h"
 #include <iostream>
-#include <SFML/Graphics.hpp>
 
-// Konstruktor inicjalizujący menu
+// Konstruktor
 Menu::Menu(sf::RenderWindow& window) : window(window), selectedOption(0) {
-    if (!font.loadFromFile("../assets/fonts/arial.ttf")) {
+    if (!font.loadFromFile("assets/fonts/arial.ttf")) {
         std::cerr << "Error loading font!" << std::endl;
         exit(1);
     }
 
-    // Opcje menu
+    // Dodaj opcje menu
     std::vector<std::string> options = { "Play", "Options", "Quit" };
-
-    // Tworzenie opcji menu
     for (size_t i = 0; i < options.size(); ++i) {
         sf::Text text;
         text.setFont(font);
@@ -24,7 +21,7 @@ Menu::Menu(sf::RenderWindow& window) : window(window), selectedOption(0) {
     }
 }
 
-// Rysowanie menu na ekranie
+// Rysowanie menu
 void Menu::draw() {
     window.clear();
     for (const auto& option : menuOptions) {
@@ -34,11 +31,12 @@ void Menu::draw() {
 }
 
 // Obsługa wejścia użytkownika
-void Menu::handleInput() {
+bool Menu::handleInput() {
     sf::Event event;
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             window.close();
+            return false;
         }
 
         if (event.type == sf::Event::KeyPressed) {
@@ -49,18 +47,20 @@ void Menu::handleInput() {
                 selectedOption = (selectedOption + 1) % menuOptions.size();
             }
             else if (event.key.code == sf::Keyboard::Return) {
-                break;
+                return true; // Opcja wybrana
             }
         }
     }
 
-    // Aktualizuj kolor opcji menu
+    // Aktualizuj kolory opcji menu
     for (size_t i = 0; i < menuOptions.size(); ++i) {
         menuOptions[i].setFillColor(i == selectedOption ? sf::Color::Red : sf::Color::White);
     }
+
+    return false;
 }
 
-// Zwraca wybraną opcję
+// Zwracanie wybranej opcji
 int Menu::getSelectedOption() const {
     return selectedOption;
 }

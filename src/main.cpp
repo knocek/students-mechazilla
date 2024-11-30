@@ -1,31 +1,33 @@
 #include <SFML/Graphics.hpp>
 #include "../include/Menu.h"
+#include "../include/Game.h"
 #include <iostream>
 
 int main() {
+
     sf::RenderWindow window(sf::VideoMode(800, 600), "Mechazilla Game Menu");
 
     Menu menu(window);
 
     while (window.isOpen()) {
-        menu.handleInput();
-        menu.draw();
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
+        // Obs³uga wejœcia u¿ytkownika
+        if (menu.handleInput()) {
             int selected = menu.getSelectedOption();
-            if (selected == 0) {
+            if (selected == 0) { // Jeœli wybrano "Play"
                 std::cout << "Play selected!" << std::endl;
-                // Tutaj uruchom grê
-            }
-            else if (selected == 1) {
+                Game game(window);   // Utwórz instancjê gry
+                game.run();          // Uruchom grê
+            } else if (selected == 1) { // Jeœli wybrano "Options"
                 std::cout << "Options selected!" << std::endl;
-                // Tutaj otwórz opcje
-            }
-            else if (selected == 2) {
+                // Tutaj otwórz ekran opcji (do implementacji)
+            } else if (selected == 2) { // Jeœli wybrano "Quit"
                 std::cout << "Quit selected!" << std::endl;
                 window.close();
             }
         }
+
+        // Rysowanie menu
+        menu.draw();
     }
 
     return 0;

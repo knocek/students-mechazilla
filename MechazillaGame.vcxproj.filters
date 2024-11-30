@@ -12,10 +12,17 @@
       <UniqueIdentifier>{8ea2d1e2-421b-4f24-8969-304a7767032b}</UniqueIdentifier>
       <Extensions>.h</Extensions>
     </Filter>
+    <Filter Include="assets\fonts">
+      <UniqueIdentifier>{1056b790-4108-4716-9105-4dfe95e159c0}</UniqueIdentifier>
+      <Extensions>.ttf</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -23,5 +30,13 @@
     <ClInclude Include="include\Menu.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Game.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\arial.ttf">
+      <Filter>assets\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

@@ -143,11 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Menu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\arial.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
