@@ -1,4 +1,5 @@
 #include "../include/Game.h"
+#include "../include/SoundManager.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 

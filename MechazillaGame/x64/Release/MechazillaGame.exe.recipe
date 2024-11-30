@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\mechazilla\students-mechazilla\x64\Debug\MechazillaGame.exe</FullPath>
+      <FullPath>E:\mechazilla\students-mechazilla\x64\Release\MechazillaGame.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
