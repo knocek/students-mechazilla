@@ -33,7 +33,7 @@ int main() {
 
     // Initialize the main menu 
     Menu menu(window, soundManager, selectedRocket);
-    OptionsMenu optionsMenu(window, soundManager, selectedRocket);
+    //OptionsMenu optionsMenu(window, soundManager, selectedRocket);
 
 
 
@@ -45,6 +45,7 @@ int main() {
 
             if (selected == 0) { // "Play" selected
                 std::cout << "Play selected!" << std::endl;
+                std::cout << "Rocket before Game: " << selectedRocket << std::endl;
 
                 // Create and run the game instance
                 Game game(window, selectedRocket);
@@ -53,10 +54,11 @@ int main() {
             }
             else if (selected == 1) { // "Options" selected
                 std::cout << "Options selected!" << std::endl;
-                
+                std::cout << "Options selected! Current Rocket: " << selectedRocket << std::endl;
+                OptionsMenu optionsMenu(window, soundManager, selectedRocket);
                 if (optionsMenu.handleInput()) {
                     std::cout << "Returning to main menu..." << std::endl;
-                    //selectedRocket = optionsMenu.getSelectedRocket();
+                    selectedRocket = optionsMenu.getSelectedRocket();
                     menu.updateSelectedRocket(selectedRocket);
                     std::cout << "Rocket after OptionsMenu in main.cpp: " << selectedRocket << std::endl;
                     //selected = -1;

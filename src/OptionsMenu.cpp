@@ -145,5 +145,6 @@ void OptionsMenu::drawSetRocket() {
 
 
 std::string OptionsMenu::getSelectedRocket() const {
+    std::cout << "Returning Rocket from OptionsMenu: " << selectedRocket << std::endl;
     return selectedRocket; // Zwraca aktualnie wybraną rakietę
 }

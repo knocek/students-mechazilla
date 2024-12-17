@@ -3,7 +3,7 @@
 #include <iostream>
 
 // Constructor
-Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager, const std::string& rocketName)
+Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager, std::string& rocketName)
     : window(window), soundManager(soundManager), selectedOption(0), selectedRocket(rocketName) {
     if (!font.loadFromFile("assets/fonts/arial.ttf")) {
         std::cerr << "Error loading font!" << std::endl;
@@ -83,8 +83,8 @@ bool Menu::handleInput() {
                         updateSelectedRocket(selectedRocket);
                     }
                     
-                    //optionsMenu.handleInput();
-                    // selectedOption = -1;
+                    selectedOption = -1;
+                    return true;
                 }
                 else if (selectedOption == 2) { // Quit
                     window.close();

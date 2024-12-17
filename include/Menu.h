@@ -22,11 +22,11 @@ private:
     sf::Texture textureMenu; // background texture
     sf::Sprite spriteBG;
 
-    std::string selectedRocket;
+    std::string& selectedRocket;
 
 
 public:
-    Menu(sf::RenderWindow& window, SoundManager& soundManager, const std::string& rocketName);
+    Menu(sf::RenderWindow& window, SoundManager& soundManager, std::string& rocketName);
     void draw();
     bool handleInput();
     int getSelectedOption() const; // method declaration

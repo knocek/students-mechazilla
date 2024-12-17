@@ -7,6 +7,7 @@
 // game construktor
 Game::Game(sf::RenderWindow& window, const std::string& rocketName) 
     : window(window), inOptions(false) {
+    std::cout << "Rocket passed to Game: " << rocketName << std::endl;
     if (!font.loadFromFile("assets/fonts/arial.ttf")) {
         std::cerr << "Failed to load font for game!" << std::endl;
         exit(1);
