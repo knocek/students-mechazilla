@@ -7,7 +7,7 @@ SoundManager::SoundManager() : isMuted(false) {
         std::cerr << "Error loading background music!" << std::endl;
         exit(1);
     }
-    backgroundMusic.setLoop(true); // Ustawienie pêtli muzyki
+    backgroundMusic.setLoop(true); // music loop
 }
 
 void SoundManager::playMusic() {

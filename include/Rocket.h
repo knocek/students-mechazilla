@@ -6,9 +6,9 @@
 
 class Rocket {
 private:
-    sf::Texture texture;  // Tekstura rakiety
-    sf::Sprite sprite;    // Sprite rakiety
-    std::string name;     // Nazwa rakiety
+    sf::Texture texture;  // rocket texture
+    sf::Sprite sprite;    // rocket sprite 
+    std::string name;     // rocket name
 
 public:
     Rocket(const std::string& texturePath, const std::string& rocketName);

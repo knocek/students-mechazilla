@@ -14,16 +14,16 @@ private:
     std::vector<sf::Text> menuOptions;
     int selectedOption;
 
-    std::string selectedRocket; // Wybrana rakieta
-    void setupMenu(); // Ustawienia g³ównego menu opcji
-    void drawSetRocket(); // Funkcja wyboru rakiety
+    std::string& selectedRocket; // selected rocket
+    void setupMenu(); // main options setup
+    void drawSetRocket(); // function for select rocket
 
 
 public:
-    OptionsMenu(sf::RenderWindow& window, SoundManager& soundManager);
+    OptionsMenu(sf::RenderWindow& window, SoundManager& soundManager, std::string& selectedRocket);
     void draw();
-    void handleInput();
-    std::string getSelectedRocket() const; // Funkcja zwracaj¹ca wybran¹ rakietê
+    bool handleInput();
+    std::string getSelectedRocket() const;
 };
 
 #endif // OPTIONSMENU_H

@@ -1,7 +1,7 @@
 #include "../include/Rocket.h"
 #include <iostream>
 
-// Konstruktor: ³adowanie tekstury i ustawienie sprite'a
+// construkctor: texture and sprite setup
 Rocket::Rocket(const std::string& texturePath, const std::string& rocketName) : name(rocketName) {
     if (!texture.loadFromFile(texturePath)) {
         std::cerr << "Failed to load rocket texture: " << texturePath << std::endl;
