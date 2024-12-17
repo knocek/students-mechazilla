@@ -8,14 +8,31 @@
 
 int main() {
     // Create the main application window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Mechazilla Game Menu");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Mechazilla Game");
 
     // Initialize the sound manager
     SoundManager soundManager;
     soundManager.playMusic();
 
+    //background
+    sf::Texture textureMenu;
+    textureMenu.loadFromFile("assets/images/main-background.jpg");
+    sf::Sprite spriteBG;
+
+    //scale background
+    sf::Vector2u textureSize = textureMenu.getSize(); // Rozmiar obrazka
+    sf::Vector2u windowSize = window.getSize();       // Rozmiar okna
+    float scaleX = static_cast<float>(windowSize.x) / static_cast<float>(textureSize.x);
+    float scaleY = static_cast<float>(windowSize.y) / static_cast<float>(textureSize.y);
+    spriteBG.setTexture(textureMenu);
+    spriteBG.setScale(1.0f, 1.0f);
+    spriteBG.setPosition(0, 0);
+
     // Initialize the main menu
     Menu menu(window, soundManager);
+
+    // default rocket
+    std::string selectedRocket = "Rocket1";
 
     while (window.isOpen()) {
         // Handle user input in the main menu
@@ -26,7 +43,7 @@ int main() {
                 std::cout << "Play selected!" << std::endl;
 
                 // Create and run the game instance
-                Game game(window);
+                Game game(window, selectedRocket);
                 game.run();
 
             }
@@ -36,6 +53,7 @@ int main() {
                 // Create and handle the options menu
                 OptionsMenu optionsMenu(window, soundManager);
                 optionsMenu.handleInput();
+                selectedRocket = optionsMenu.getSelectedRocket(); // Pobranie wybranej rakiety
 
             }
             else if (selected == 2) { // "Quit" selected
@@ -45,6 +63,7 @@ int main() {
         }
 
         // Draw the main menu
+        window.draw(spriteBG);
         menu.draw();
     }
 

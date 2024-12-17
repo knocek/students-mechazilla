@@ -119,7 +119,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)SFML/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>MechazillaGame.exe</OutputFile>
+      <OutputFile>$(SolutionDir)x64\Debug\MechazillaGame.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,12 +147,14 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\OptionsMenu.cpp" />
+    <ClCompile Include="src\Rocket.cpp" />
     <ClCompile Include="src\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Menu.h" />
     <ClInclude Include="include\OptionsMenu.h" />
+    <ClInclude Include="include\Rocket.h" />
     <ClInclude Include="include\SoundManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +164,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\sounds\background-music.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\images\rakieta-1.png" />
+    <Image Include="assets\images\rakieta-2.png" />
+    <Image Include="assets\images\rakieta-3.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

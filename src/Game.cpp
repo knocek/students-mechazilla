@@ -1,14 +1,19 @@
 #include "../include/Game.h"
+#include "../include/Rocket.h"
 #include "../include/SoundManager.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
 // Konstruktor gry
-Game::Game(sf::RenderWindow& window) : window(window), inOptions(false) {
+Game::Game(sf::RenderWindow& window, const std::string& rocketName) 
+    : window(window), inOptions(false) {
     if (!font.loadFromFile("assets/fonts/arial.ttf")) {
         std::cerr << "Failed to load font for game!" << std::endl;
         exit(1);
     }
+
+    rocket = new Rocket("assets/images/" + rocketName + ".png", rocketName);
+    rocket->setPosition(400, 300); // Ustawienie pozycji rakiety na œrodku
 
     gameText.setFont(font);
     gameText.setString("Kod Gry");
@@ -20,6 +25,8 @@ Game::Game(sf::RenderWindow& window) : window(window), inOptions(false) {
     menuButton.setFillColor(sf::Color::Green);
     menuButton.setPosition(10, 10);
 }
+
+
 
 void Game::run() {
     bool isRunning = true;
@@ -38,6 +45,7 @@ void Game::run() {
 void Game::draw() {
     window.clear(sf::Color::Blue);
     window.draw(gameText);
+    rocket->draw(window);
     window.draw(menuButton);
     window.display();
 }
@@ -82,4 +90,8 @@ void Game::handleInput() {
             }
         }
     }
+}
+
+Game::~Game() {
+    delete rocket;
 }
