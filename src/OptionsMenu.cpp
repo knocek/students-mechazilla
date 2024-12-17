@@ -24,12 +24,12 @@ void OptionsMenu::setupMenu() {
 
         sf::FloatRect textBounds = text.getLocalBounds();
 
-        // Wysrodkuj tekst
-        float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
-        float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
-        text.setPosition(textX, textY);
-        text.setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
-        menuOptions.push_back(text);
+      // Wysrodkuj tekst
+      float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
+      float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
+      text.setPosition(textX, textY);
+      text.setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
+      menuOptions.push_back(text);
     }
 }
 
@@ -41,7 +41,7 @@ void OptionsMenu::drawSetRocket() {
     while (window.isOpen()) {
         window.clear();
 
-        // Wyœwietlanie dostêpnych rakiet
+        // WyÅ“wietlanie dostÃªpnych rakiet
         for (size_t i = 0; i < rockets.size(); ++i) {
             sf::Text text;
             text.setFont(font);
@@ -129,7 +129,7 @@ void OptionsMenu::handleInput() {
     }
 }
 
-// Zwraca wybran¹ rakietê
+// Zwraca wybranÂ¹ rakietÃª
 std::string OptionsMenu::getSelectedRocket() const {
     return selectedRocket;
 }

@@ -12,15 +12,15 @@ private:
     sf::RenderWindow& window;
     SoundManager& soundManager;
 
+    std::vector<sf::Text> menuOptions;
+    int selectedOption;
+
     //font
     sf::Font font;
 
     //background
-    sf::Texture textureMenu; // Tekstura t?a
+    sf::Texture textureMenu; // Tekstura tla
     sf::Sprite spriteBG;
-
-    std::vector<sf::Text> menuOptions;
-    int selectedOption;
 
 public:
     Menu(sf::RenderWindow& window, SoundManager& soundManager);

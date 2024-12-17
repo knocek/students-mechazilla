@@ -166,9 +166,10 @@
     <None Include="assets\sounds\background-music.ogg" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\images\rakieta-1.png" />
-    <Image Include="assets\images\rakieta-2.png" />
-    <Image Include="assets\images\rakieta-3.png" />
+    <Image Include="assets\images\Rocket1.png" />
+    <Image Include="assets\images\Rocket2.png" />
+    <Image Include="assets\images\Rocket3.png" />
+    <Image Include="assets\images\main-background.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
