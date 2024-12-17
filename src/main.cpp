@@ -6,14 +6,6 @@
 #include "../include/OptionsMenu.h"
 #include <iostream>
 
-// Stany gry
-enum class GameState {
-    MAIN_MENU,
-    OPTIONS_MENU,
-    GAME,
-    EXIT
-};
-
 int main() {
     // Create the main application window
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Mechazilla Game");
@@ -43,8 +35,7 @@ int main() {
     Menu menu(window, soundManager, selectedRocket);
     OptionsMenu optionsMenu(window, soundManager, selectedRocket);
 
-    //stan pocztakowy
-   // GameState gameState = GameState::MAIN_MENU;
+
 
     while (window.isOpen()) {
 

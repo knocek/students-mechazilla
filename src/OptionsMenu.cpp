@@ -44,7 +44,7 @@ void OptionsMenu::draw() {
 
 // Handle input for the menu
 bool OptionsMenu::handleInput() {
-    bool shouldExit = false;
+
 
     while (window.isOpen()) {
         sf::Event event;
@@ -75,7 +75,7 @@ bool OptionsMenu::handleInput() {
                     }
                     else if (selectedOption == 2) { // Back
                         std::cout << "Option 2-Returning to main menu..." << std::endl;
-                        shouldExit = true;
+                        return true;
                     }
                 }
 
@@ -88,7 +88,7 @@ bool OptionsMenu::handleInput() {
 
         draw(); // Redraw menu
     }
-    return true;
+    return false;
 }
 
 // change rocket
