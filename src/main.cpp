@@ -31,6 +31,9 @@ int main() {
     // Initialize the main menu
     Menu menu(window, soundManager);
 
+    // default rocket
+    std::string selectedRocket = "Rocket1";
+
     while (window.isOpen()) {
         // Handle user input in the main menu
         if (menu.handleInput()) {
@@ -40,7 +43,7 @@ int main() {
                 std::cout << "Play selected!" << std::endl;
 
                 // Create and run the game instance
-                Game game(window);
+                Game game(window, selectedRocket);
                 game.run();
 
             }
@@ -50,6 +53,7 @@ int main() {
                 // Create and handle the options menu
                 OptionsMenu optionsMenu(window, soundManager);
                 optionsMenu.handleInput();
+                selectedRocket = optionsMenu.getSelectedRocket(); // Pobranie wybranej rakiety
 
             }
             else if (selected == 2) { // "Quit" selected

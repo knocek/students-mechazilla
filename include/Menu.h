@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../include/SoundManager.h"
+#include "../include/Rocket.h"
 #include <vector>
 #include <string>
 
@@ -10,15 +11,15 @@ class Menu {
 private:
     sf::RenderWindow& window;
     SoundManager& soundManager;
-   
+
     std::vector<sf::Text> menuOptions;
-    int selectedOption; // Indeks wybranej opcji
+    int selectedOption;
 
     //font
     sf::Font font;
 
     //background
-    sf::Texture textureMenu; // Tekstura t³a
+    sf::Texture textureMenu; // Tekstura tla
     sf::Sprite spriteBG;
 
 public:

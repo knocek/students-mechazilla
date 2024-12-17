@@ -147,12 +147,14 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\OptionsMenu.cpp" />
+    <ClCompile Include="src\Rocket.cpp" />
     <ClCompile Include="src\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Menu.h" />
     <ClInclude Include="include\OptionsMenu.h" />
+    <ClInclude Include="include\Rocket.h" />
     <ClInclude Include="include\SoundManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +166,9 @@
     <None Include="assets\sounds\background-music.ogg" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\images\Rocket1.png" />
+    <Image Include="assets\images\Rocket2.png" />
+    <Image Include="assets\images\Rocket3.png" />
     <Image Include="assets\images\main-background.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

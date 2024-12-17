@@ -11,7 +11,6 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
     }
 
     //background
-
     if (!textureMenu.loadFromFile("assets/images/main-background.jpg")) {
         std::cerr << "Error loading background image!" << std::endl;
         exit(1);
@@ -24,20 +23,19 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
     std::vector<std::string> options = { "Play", "Options", "Quit" };
 
     for (size_t i = 0; i < options.size(); ++i) {
-        sf::Text text;
-        text.setFont(font);
-        text.setString(options[i]);
-        text.setCharacterSize(40);
-
-        sf::FloatRect textBounds = text.getLocalBounds();
-
-        // Wyśrodkuj tekst
-        float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
-        float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
-
-        text.setPosition(textX, textY);
-        text.setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
-        menuOptions.push_back(text);
+    sf::Text text;
+    text.setFont(font);
+    text.setString(options[i]);
+    text.setCharacterSize(40);
+    
+    sf::FloatRect textBounds = text.getLocalBounds();
+    // Wyśrodkuj tekst
+    float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
+    float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
+    text.setPosition(textX, textY);
+    text.setFillColor(i == selectedOption ? sf::Color::Blue : sf::Color::White);
+    
+    menuOptions.push_back(text);
     }
 }
 
