@@ -15,18 +15,22 @@ private:
     std::vector<sf::Text> menuOptions;
     int selectedOption;
 
-    //font
+    // font
     sf::Font font;
 
-    //background
-    sf::Texture textureMenu; // Tekstura tla
+    // background
+    sf::Texture textureMenu; // background texture
     sf::Sprite spriteBG;
 
+    std::string selectedRocket;
+
+
 public:
-    Menu(sf::RenderWindow& window, SoundManager& soundManager);
+    Menu(sf::RenderWindow& window, SoundManager& soundManager, const std::string& rocketName);
     void draw();
     bool handleInput();
-    int getSelectedOption() const; // Deklaracja metody
+    int getSelectedOption() const; // method declaration
+    void updateSelectedRocket(const std::string& newRocket);
 };
 
 #endif // MENU_H

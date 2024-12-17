@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-// Konstruktor gry
+// game construktor
 Game::Game(sf::RenderWindow& window, const std::string& rocketName) 
     : window(window), inOptions(false) {
     if (!font.loadFromFile("assets/fonts/arial.ttf")) {
@@ -13,7 +13,7 @@ Game::Game(sf::RenderWindow& window, const std::string& rocketName)
     }
 
     rocket = new Rocket("assets/images/" + rocketName + ".png", rocketName);
-    rocket->setPosition(400, 300); // Ustawienie pozycji rakiety na œrodku
+    rocket->setPosition(800, 100); // show rocket
 
     gameText.setFont(font);
     gameText.setString("Kod Gry");

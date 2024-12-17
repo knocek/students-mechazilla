@@ -3,8 +3,8 @@
 #include <iostream>
 
 // Constructor
-Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
-    : window(window), soundManager(soundManager), selectedOption(0) {
+Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager, const std::string& rocketName)
+    : window(window), soundManager(soundManager), selectedOption(0), selectedRocket(rocketName) {
     if (!font.loadFromFile("assets/fonts/arial.ttf")) {
         std::cerr << "Error loading font!" << std::endl;
         exit(1);
@@ -29,7 +29,7 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
     text.setCharacterSize(40);
     
     sf::FloatRect textBounds = text.getLocalBounds();
-    // Wyśrodkuj tekst
+    // text align center
     float textX = (1920 / 2.0f) - (textBounds.width / 2.0f);
     float textY = (1080 / 2.0f) - (options.size() * 60 / 2.0f) + i * 60;
     text.setPosition(textX, textY);
@@ -37,6 +37,11 @@ Menu::Menu(sf::RenderWindow& window, SoundManager& soundManager)
     
     menuOptions.push_back(text);
     }
+}
+
+void Menu::updateSelectedRocket(const std::string& newRocket) {
+    selectedRocket = newRocket; // update selected rocket
+    std::cout << "Updated Rocket in Menu: " << selectedRocket << std::endl;
 }
 
 // Draw main menu
@@ -71,8 +76,15 @@ bool Menu::handleInput() {
             }
             else if (event.key.code == sf::Keyboard::Return) {
                 if (selectedOption == 1) { // Open Options Menu
-                    OptionsMenu optionsMenu(window, soundManager);
-                    optionsMenu.handleInput();
+                    OptionsMenu optionsMenu(window, soundManager, selectedRocket);
+                    
+                    if (optionsMenu.handleInput()) {
+                        selectedRocket = optionsMenu.getSelectedRocket();
+                        updateSelectedRocket(selectedRocket);
+                    }
+                    
+                    //optionsMenu.handleInput();
+                    // selectedOption = -1;
                 }
                 else if (selectedOption == 2) { // Quit
                     window.close();

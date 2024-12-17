@@ -5,27 +5,26 @@
 #include "../include/Rocket.h"
 #include <string>
 
-// Klasa odpowiedzialna za logikê gry
 class Game {
 private:
-    sf::RenderWindow& window;      // Referencja do g³ównego okna
-    sf::Font font;                 // Font u¿ywany w grze
+    sf::RenderWindow& window;      // main window reference
+    sf::Font font;                 // game font
     sf::Text gameText;             // Napis "Kod Gry"
-    sf::RectangleShape menuButton; // Znaczek menu
-    bool inOptions;                // Czy jesteœmy w menu opcji
+    sf::RectangleShape menuButton; // menu icon
+    bool inOptions;                // if menu selected
 
-    Rocket* rocket; // Dynamiczna rakieta
+    Rocket* rocket; // dynamic rocket function
 
 
 
 public:
-    Game(sf::RenderWindow& window, const std::string& rocketName);  // Konstruktor
+    Game(sf::RenderWindow& window, const std::string& rocketName);  // game constructor
     ~Game();
 
-    void run();                      // G³ówna pêtla gry
-    void draw();                     // Rysowanie elementów gry
-    void handleInput();              // Obs³uga wejœcia u¿ytkownika
-    void drawOptions();            // Rysowanie menu opcji
+    void run();                      // main game loop
+    void draw();                     // draw game elements
+    void handleInput();              // input
+    void drawOptions();              //draw menu options
 };
 
 #endif // GAME_H
